@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-encoder= joblib.load('C:\Users\MINE\Desktop\Customer Segmentation\model\encoder.pkl')
-scaler= joblib.load('C:\Users\MINE\Desktop\Customer Segmentation\model\scale.pkl')
-model= joblib.load('C:\Users\MINE\Desktop\Customer Segmentation\model\model.pkl')
+encoder= joblib.load(r'C:\Users\MINE\Desktop\Customer Segmentation\model\encoder.pkl')
+scaler= joblib.load(r'C:\Users\MINE\Desktop\Customer Segmentation\model\scale.pkl')
+model= joblib.load(r'C:\Users\MINE\Desktop\Customer Segmentation\model\model.pkl')
 
 st.title('Customer Segmentation App')
 st.write('Enter Customer Data')
@@ -42,7 +42,7 @@ df_scaled= scaler.transform(df)
 
 button= st.button('Submit')
 
-if button== True:
+if button:
   cluster= model.predict(df_scaled)
   st.write(cluster)
   if cluster == 0:
