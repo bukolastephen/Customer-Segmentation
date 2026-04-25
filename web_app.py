@@ -46,12 +46,12 @@ if button:
   cluster= model.predict(df_scaled)
   st.write(cluster)
   if cluster == 0:
-    st.success('customer among those who has the lower avarage age in the distribution,where most are married with 2n Cycle education status.')
+    st.success('customer among those who are the second highest earners and spenders,they also rank third in number of purchases.')
   elif cluster == 1:
-    st.success('customer among those who make the most purchases and are also the second top spenders, most of the them are graduation holders and are married.')
+    st.success('customer among those who they rank oldest with the second least income, amount spent and number of purchases, also the highest number of Phd and masters holders.')
   elif cluster == 2:
-    st.success('customer among those who has the highest amount of Phd Holders and Married Folks, they also rank as the oldest.')
+    st.success('customer among those who are the  highest earners, campaings accepted and spenders,they also rank second in number of purchases.')
   elif cluster== 3:
-    st.success('customer among those who visit the web the most, most are married and graduation holders.')
+    st.success('customer among those with the highest number of purchases and  second hisgest number of web visits.')
   elif cluster==4:
-    st.success('customer among those who are the highest earners and spenders, they also receive the highest campaign.')
+    st.success('customer among those who they have highest number of web visits, the youngest in age and earns the lowest, with the highest number of graduation, basic and 2n cycle holders and are mostly married')
