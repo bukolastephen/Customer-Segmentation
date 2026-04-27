@@ -42,7 +42,6 @@ df['Education']= df['Education'].map(edu_dict)
 mstatus_dict= {'Married': 1,'Together':2, 'Divorced': 3,'Single': 4, 'Widow': 5, 'Alone':6, 'Absurd':7, 'YOLO':8 }
 df['Marital_Status']= df['Marital_Status'].map(mstatus_dict)
 
-st.write(df)
 
 df_scaled= scaler.transform(df)
 
@@ -55,12 +54,12 @@ with st.spinner("Analyzing customer..."):
     cluster= model.predict(df_scaled)[0]
     st.write(cluster)
     if cluster == 0:
-      st.success('customer among those who are the second highest earners and spenders,they also rank third in number of purchases.')
+      st.success('customer among those who are the oldest in the group, they rank second lowest in Income,amount_spent and purchases,they have the highest number of phd and masters holders.')
     elif cluster == 1:
-      st.success('customer among those who they rank oldest with the second least income, amount spent and number of purchases, also the highest number of Phd and masters holders.')
+      st.success('customer among those that make the most Income and spends the most, they make the second highest purchases and they accepted campaign the most')
     elif cluster == 2:
-      st.success('customer among those who are the  highest earners, campaings accepted and spenders,they also rank second in number of purchases.')
+      st.success('customer among those who rank second oldest and are mostly single,most are graduation holders.')
     elif cluster== 3:
-      st.success('customer among those with the highest number of purchases and  second hisgest number of web visits.')
+      st.success('customer among those that are  youngest in age, lowest Income erners,spenders as well as purchases, most are married and graduation holders')
     elif cluster==4:
-      st.success('customer among those who they have highest number of web visits, the youngest in age and earns the lowest, with the highest number of graduation, basic and 2n cycle holders and are mostly married')
+      st.success('customer among those that make the most purchases and are married.')
